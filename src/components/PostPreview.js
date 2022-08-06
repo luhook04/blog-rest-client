@@ -8,7 +8,7 @@ const PostPreview = ({ post }) => {
     <div className="post-preview">
       <h3 className="post-title">{post.title}</h3>
       <h4 className="post-author">By: {post.authorName}</h4>
-      <p className="post-date">{post.date}</p>
+      <p className="post-date-preview">{post.date}</p>
       <div className="view-post-container">
         <Link to={`/posts/${post._id}`}>
           <button>View Post</button>

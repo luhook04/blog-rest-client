@@ -43,22 +43,26 @@ const CommentSection = ({ comments }) => {
     <div className="comment-section-container">
       <div className="form-container">
         <form onSubmit={handleSubmitComment}>
-          <label htmlFor="username">Username:</label>
-          <input
-            id="username"
-            name="username"
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          ></input>
-          <label htmlFor="text">Comment:</label>
-          <input
-            id="text"
-            name="text"
-            type="text"
-            value={text}
-            onChange={(e) => setText(e.target.value)}
-          ></input>
+          <div className="form-input">
+            <label htmlFor="username">Username:</label>
+            <input
+              id="username"
+              name="username"
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            ></input>
+          </div>
+          <div className="form-input">
+            <label htmlFor="text">Comment:</label>
+            <input
+              id="text"
+              name="text"
+              type="text"
+              value={text}
+              onChange={(e) => setText(e.target.value)}
+            ></input>
+          </div>
           <button type="submit">Send Comment</button>
         </form>
       </div>

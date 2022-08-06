@@ -3,10 +3,12 @@ import React from "react";
 const Post = ({ post }) => {
   return (
     <div className="post-container">
-      <h2>{post.title}</h2>
-      <h3>{post.authorName}</h3>
-      <p>{post.date}</p>
-      <p>{post.text}</p>
+      <h3>{post.title}</h3>
+      <h4>
+        <span className="post-date">{post.date}</span> By:{" "}
+        {post.authorName}
+      </h4>
+      <p className="post-content">{post.text}</p>
     </div>
   );
 };

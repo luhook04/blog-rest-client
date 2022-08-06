@@ -8,7 +8,7 @@ const Comments = ({ comments }) => {
           <div className="comment-container" key={comment._id}>
             <p>{comment.username}</p>
             <p>{comment.text}</p>
-            <p>{comment.date}</p>
+            <p className="comment-date">{comment.date}</p>
           </div>
         );
       })}

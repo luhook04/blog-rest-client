@@ -1,38 +1,118 @@
-.App {
+html {
+  background-color: rgba(0, 255, 255, 0.628);
+}
+.app {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.post-previews {
+  display: grid;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+  column-gap: 10px;
+  row-gap: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.post-preview {
+  border-radius: 6px;
+  background-color: beige;
+  padding: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.view-post-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.comment-count-container {
+  display: flex;
+  position: absolute;
+  right: 0;
+  align-items: flex-start;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  color: red;
+}
+
+.post-date {
+  font-style: italic;
+  font-weight: lighter;
+  color: darkslategray;
+}
+
+.post-date-preview {
+  font-size: small;
+  font-style: italic;
+}
+
+.post-container {
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: beige;
+  margin-bottom: 20px;
+}
+
+.post-content {
+  padding: 15px;
+  text-align: left;
+}
+
+.comment-section-container {
+  border-radius: 10px;
+  background-color: beige;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-input {
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+}
+
+.comment-container {
+  padding-left: 10px;
+  text-align: left;
+  margin-top: 10px;
+  border-radius: 10px;
+  border-top: 1px solid #cacaca;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.comment-date {
+  font-size: smaller;
+  color: darkslategray;
+  font-style: italic;
 }
