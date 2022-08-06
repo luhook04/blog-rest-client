@@ -5,7 +5,7 @@ const CommentSection = () => {
   return (
     <div>
       <h2>Comment Section Component</h2>
-      <Comment></Comment>
+      <Comment />
     </div>
   );
 };

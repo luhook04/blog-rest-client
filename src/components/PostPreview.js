@@ -6,17 +6,17 @@ const PostPreview = ({ post }) => {
   let commentCount = post.comments.length;
   return (
     <div className="post-preview">
-      <h2>{post.title}</h2>
-      <h3>By: {post.authorName}</h3>
-      <p>{post.date}</p>
+      <h3 className="post-title">{post.title}</h3>
+      <h4 className="post-author">By: {post.authorName}</h4>
+      <p className="post-date">{post.date}</p>
       <div className="view-post-container">
         <Link to={`/posts/${post._id}`}>
           <button>View Post</button>
         </Link>
-        <div className="comment-icon-container">
+        <div className="comment-count-container">
           <CommentIcon />
+          <span className="comment-count">{commentCount}</span>
         </div>
-        <span className="comment-count">{commentCount}</span>
       </div>
     </div>
   );
