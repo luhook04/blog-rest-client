@@ -10,6 +10,7 @@ const Home = () => {
           "https://dry-hamlet-86450.herokuapp.com/api/posts"
         );
         if (req.status !== 200) {
+          return;
         }
         const reqJson = await req.json();
         setPosts(reqJson.posts);

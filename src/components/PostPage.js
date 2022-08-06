@@ -5,6 +5,7 @@ import CommentSection from "./CommentSection";
 
 const PostPage = () => {
   const [post, setPost] = useState();
+  const [comments, setComments] = useState();
 
   let { postId } = useParams();
 
@@ -21,7 +22,22 @@ const PostPage = () => {
         setPost(reqJson.post);
       } catch (err) {}
     };
-  });
+    getPost();
+
+    const getComments = async () => {
+      try {
+        const req = await fetch(
+          `https://dry-hamlet-86450.herokuapp.com/api/posts/${postId}/comments`
+        );
+        if (req.status !== 200) {
+          return;
+        }
+        const reqJson = await req.json();
+        setComments(reqJson.comments);
+      } catch (err) {}
+    };
+    getComments();
+  }, []);
 
   return (
     <div>
