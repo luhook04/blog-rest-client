@@ -1,12 +1,9 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
 import Comments from "./Comments";
 
-const CommentSection = ({ comments }) => {
+const CommentSection = ({ comments, postId }) => {
   const [username, setUsername] = useState("");
   const [text, setText] = useState("");
-
-  const { postId } = useParams();
 
   const refreshPage = () => {
     window.location.reload();
