@@ -36,7 +36,6 @@ const Home = () => {
       ) : (
         <h2>No Posts</h2>
       )}
-      <PostPreview />
     </div>
   );
 };
