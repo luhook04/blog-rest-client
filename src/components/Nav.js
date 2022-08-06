@@ -1,7 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
-  return <h1>NAV Component</h1>;
+  return (
+    <div className="navbar-container">
+      <Link to="/">
+        <h2>Cap'n Hook's Blog</h2>
+      </Link>
+    </div>
+  );
 };
 
 export default Nav;

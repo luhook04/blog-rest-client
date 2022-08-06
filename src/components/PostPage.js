@@ -41,7 +41,6 @@ const PostPage = () => {
 
   return (
     <div>
-      <h1>Post Page Component</h1>
       <Post post={post}></Post>
       <CommentSection comments={comments}></CommentSection>
     </div>
