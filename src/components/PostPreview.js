@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import CommentIcon from "@mui/icons-material/Comment";
 
 const PostPreview = ({ post }) => {
-  let commentCount = post.comments.length;
+  const commentCount = post.comments.length;
   return (
     <div className="post-preview">
       <h3 className="post-title">{post.title}</h3>
