@@ -8,6 +8,10 @@ const CommentSection = ({ comments }) => {
 
   const { postId } = useParams();
 
+  const refreshPage = () => {
+    window.location.reload();
+  };
+
   const handleSubmitComment = async (e) => {
     e.preventDefault();
     try {
@@ -25,8 +29,8 @@ const CommentSection = ({ comments }) => {
           }),
         }
       );
-
       if (res.status === 200) {
+        refreshPage();
         setUsername("");
         setText("");
       } else {
@@ -58,7 +62,6 @@ const CommentSection = ({ comments }) => {
           <button type="submit">Send Comment</button>
         </form>
       </div>
-      <h2>Comment Section Component</h2>
       <Comments comments={comments} />
     </div>
   );
