@@ -4,10 +4,10 @@ import Post from "./Post";
 import CommentSection from "./CommentSection";
 
 const PostPage = () => {
-  const [post, setPost] = useState();
-  const [comments, setComments] = useState();
+  const [post, setPost] = useState({});
+  const [comments, setComments] = useState([]);
 
-  let { postId } = useParams();
+  const { postId } = useParams();
 
   useEffect(() => {
     const getPost = async () => {
@@ -37,13 +37,13 @@ const PostPage = () => {
       } catch (err) {}
     };
     getComments();
-  }, []);
+  }, [postId]);
 
   return (
     <div>
       <h1>Post Page Component</h1>
-      <Post />
-      <CommentSection />
+      <Post post={post}></Post>
+      <CommentSection comments={comments}></CommentSection>
     </div>
   );
 };

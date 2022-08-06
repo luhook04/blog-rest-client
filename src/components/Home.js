@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import PostPreview from "./PostPreview";
 
 const Home = () => {
-  const [posts, setPosts] = useState();
+  const [posts, setPosts] = useState([]);
   useEffect(() => {
     const getPosts = async () => {
       try {
