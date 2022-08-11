@@ -11,12 +11,8 @@ const App = () => {
       <Nav />
       <div className="container">
         <Routes>
-          <Route exact path="/" element={<Home />}></Route>
-          <Route
-            exact
-            path="/posts/:postId"
-            element={<PostPage />}
-          ></Route>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/posts/:postId" element={<PostPage />} />
         </Routes>
       </div>
     </div>

@@ -41,8 +41,8 @@ const PostPage = () => {
 
   return (
     <div>
-      <Post post={post}></Post>
-      <CommentSection postId={postId} comments={comments}></CommentSection>
+      <Post post={post} />
+      <CommentSection postId={postId} comments={comments} />
     </div>
   );
 };

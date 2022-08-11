@@ -48,7 +48,7 @@ const CommentSection = ({ comments, postId }) => {
               type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-            ></input>
+            />
           </div>
           <div className="form-input">
             <label htmlFor="text">Comment:</label>
@@ -58,7 +58,7 @@ const CommentSection = ({ comments, postId }) => {
               type="text"
               value={text}
               onChange={(e) => setText(e.target.value)}
-            ></input>
+            />
           </div>
           <button type="submit">Send Comment</button>
         </form>

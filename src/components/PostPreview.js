@@ -11,7 +11,7 @@ const PostPreview = ({ post }) => {
       <p className="post-date-preview">{post.date}</p>
       <div className="view-post-container">
         <Link to={`/posts/${post._id}`}>
-          <button>View Post</button>
+          <button type="button">View Post</button>
         </Link>
         <div className="comment-count-container">
           <CommentIcon />

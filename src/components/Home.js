@@ -13,7 +13,10 @@ const Home = () => {
           return;
         }
         const reqJson = await req.json();
-        setPosts(reqJson.posts);
+        const publishedPosts = reqJson.posts.filter(
+          (post) => post.published === true
+        );
+        setPosts(publishedPosts);
       } catch (err) {}
     };
     getPosts();
@@ -28,9 +31,7 @@ const Home = () => {
           </div>
           <div className="post-previews">
             {posts.map((post) => {
-              return (
-                <PostPreview key={post._id} post={post}></PostPreview>
-              );
+              return <PostPreview key={post._id} post={post} />;
             })}
           </div>
         </div>
