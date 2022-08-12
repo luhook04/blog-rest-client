@@ -11,7 +11,7 @@ const App = () => {
       <Nav />
       <div className="container">
         <Routes>
-          <Route exact path="/blog-rest-client" element={<Home />} />
+          <Route exact path="/" element={<Home />} />
           <Route exact path="/posts/:postId" element={<PostPage />} />
         </Routes>
       </div>

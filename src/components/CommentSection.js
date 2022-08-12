@@ -32,6 +32,7 @@ const CommentSection = ({ comments, postId }) => {
       return err;
     }
   };
+
   return (
     <div className="comment-section-container">
       <div className="form-container">
