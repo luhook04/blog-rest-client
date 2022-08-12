@@ -5,10 +5,6 @@ const CommentSection = ({ comments, postId }) => {
   const [username, setUsername] = useState("");
   const [text, setText] = useState("");
 
-  const refreshPage = () => {
-    window.location.reload();
-  };
-
   const handleSubmitComment = async (e) => {
     e.preventDefault();
     try {
@@ -27,7 +23,6 @@ const CommentSection = ({ comments, postId }) => {
         }
       );
       if (res.status === 200) {
-        refreshPage();
         setUsername("");
         setText("");
       } else {
