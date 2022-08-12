@@ -26,6 +26,7 @@ const CommentSection = ({ comments, postId }) => {
         setUsername("");
         setText("");
       } else {
+        return;
       }
     } catch (err) {
       console.log(err);
