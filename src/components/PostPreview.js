@@ -1,21 +1,27 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import CommentIcon from "@mui/icons-material/Comment";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import CommentIcon from '@mui/icons-material/Comment';
 
 const PostPreview = ({ post }) => {
   const commentCount = post.comments.length;
   return (
-    <div className="post-preview">
-      <h3 className="post-title">{post.title}</h3>
-      <h4 className="post-author">By: {post.authorName}</h4>
-      <p className="post-date-preview">{post.date}</p>
-      <div className="view-post-container">
+    <div className="rounded py-2 bg-white shadow-lg shadow-slate-400 my-2">
+      <h3 className="text-2xl font-bold mt-5">{post.title}</h3>
+      <h4 className="text-md font-bold mb-14">By: {post.authorName}</h4>
+      <p className="text-md mb-1">{post.date}</p>
+      <div className="flex flex-row justify-center items-center mb-5">
+        <div className="flex-1 invisible w-0" />
         <Link to={`/posts/${post._id}`}>
-          <button type="button">View Post</button>
+          <button
+            type="button"
+            className="bg-blue-500 hover:bg-blue-700 text-white px-12 py-1 rounded text-md"
+          >
+            View Post
+          </button>
         </Link>
-        <div className="comment-count-container">
+        <div className="flex flex-1 items-center justify-center w-0">
           <CommentIcon />
-          <span className="comment-count">{commentCount}</span>
+          <span>{commentCount}</span>
         </div>
       </div>
     </div>

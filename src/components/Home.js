@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from "react";
-import PostPreview from "./PostPreview";
+import React, { useState, useEffect } from 'react';
+import PostPreview from './PostPreview';
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
+
   useEffect(() => {
     const getPosts = async () => {
       try {
         const req = await fetch(
-          "https://dry-hamlet-86450.herokuapp.com/api/posts"
+          'https://dry-hamlet-86450.herokuapp.com/api/posts'
         );
         if (req.status !== 200) {
           return;
@@ -23,17 +24,12 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="home-container">
+    <div className="text-center w-4/5 mx-auto my-8">
       {posts ? (
-        <div>
-          <div className="welcome-message">
-            <h3>Welcome to Captain Hook's Blog</h3>
-          </div>
-          <div className="post-previews">
-            {posts.map((post) => {
-              return <PostPreview key={post._id} post={post} />;
-            })}
-          </div>
+        <div className="grid grid-cols-1 gap-3">
+          {posts.map((post) => {
+            return <PostPreview key={post._id} post={post} />;
+          })}
         </div>
       ) : (
         <h2>No Posts</h2>

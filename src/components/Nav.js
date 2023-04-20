@@ -1,13 +1,13 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Nav = () => {
   return (
-    <div className="navbar-container">
+    <header className="bg-white h-20 flex items-center justify-center sticky top-0 border-b border-slate-300">
       <Link to="/">
-        <h2>Cap'n Hook's Blog</h2>
+        <h1 className="text-2xl font-black">Cap'n Hook's Blog</h1>
       </Link>
-    </div>
+    </header>
   );
 };
 
