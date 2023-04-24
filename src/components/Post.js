@@ -8,7 +8,9 @@ const Post = ({ post }) => {
         <span className="italic font-light">{post.date}</span> By:{' '}
         {post.authorName}
       </h3>
-      <p className="post-content p4 text-left text-xs">{post.text}</p>
+      <p className="post-content p4 text-left text-xs sm:text-base">
+        {post.text}
+      </p>
     </div>
   );
 };

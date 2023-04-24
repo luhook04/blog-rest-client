@@ -37,7 +37,7 @@ const CommentSection = ({ comments, postId }) => {
     }
   };
   return (
-    <div className="bg-white mx-auto w-3/4 p-5 text-xs shadow shadow-slate-400 mb-3">
+    <div className="bg-white mx-auto w-3/4 p-5 text-xs sm:text-base shadow shadow-slate-400 mb-3">
       <div className="flex flex-col text-center">
         <form onSubmit={handleSubmitComment}>
           <div className="text-left mx-auto mb-2.5 flex flex-col">
