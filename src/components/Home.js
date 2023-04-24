@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import LoaderContainer from './LoaderContainer';
 import PostPreview from './PostPreview';
 
 const Home = () => {
   const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     const getPosts = async () => {
       try {
         const req = await fetch(
@@ -21,20 +24,27 @@ const Home = () => {
       } catch (err) {}
     };
     getPosts();
+    setLoading(false);
   }, []);
 
   return (
-    <div className="text-center w-4/5 mx-auto my-8">
-      {posts ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {posts.map((post) => {
-            return <PostPreview key={post._id} post={post} />;
-          })}
+    <>
+      {!loading ? (
+        <div className="text-center w-4/5 mx-auto my-8">
+          {posts ? (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+              {posts.map((post) => {
+                return <PostPreview key={post._id} post={post} />;
+              })}
+            </div>
+          ) : (
+            <h2>No Posts</h2>
+          )}
         </div>
       ) : (
-        <h2>No Posts</h2>
+        <LoaderContainer />
       )}
-    </div>
+    </>
   );
 };
 

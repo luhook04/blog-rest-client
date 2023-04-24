@@ -2,14 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Post from './Post';
 import CommentSection from './CommentSection';
+import LoaderContainer from './LoaderContainer';
 
 const PostPage = () => {
   const [post, setPost] = useState({});
   const [comments, setComments] = useState([]);
-
+  const [postLoading, setPostLoading] = useState(false);
   const { postId } = useParams();
 
   useEffect(() => {
+    setPostLoading(true);
     const getPost = async () => {
       try {
         const req = await fetch(
@@ -37,12 +39,19 @@ const PostPage = () => {
       } catch (err) {}
     };
     getComments();
+    setPostLoading(false);
   }, [postId]);
 
   return (
     <div>
-      <Post post={post} />
-      <CommentSection postId={postId} comments={comments} />
+      {!postLoading ? (
+        <>
+          <Post post={post} />
+          <CommentSection postId={postId} comments={comments} />
+        </>
+      ) : (
+        <LoaderContainer />
+      )}
     </div>
   );
 };
