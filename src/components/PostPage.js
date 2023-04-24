@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import Post from "./Post";
-import CommentSection from "./CommentSection";
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import Post from './Post';
+import CommentSection from './CommentSection';
 
 const PostPage = () => {
   const [post, setPost] = useState({});

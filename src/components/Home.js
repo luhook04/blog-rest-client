@@ -26,7 +26,7 @@ const Home = () => {
   return (
     <div className="text-center w-4/5 mx-auto my-8">
       {posts ? (
-        <div className="grid grid-cols-1 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {posts.map((post) => {
             return <PostPreview key={post._id} post={post} />;
           })}

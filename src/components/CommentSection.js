@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import Comments from "./Comments";
+import React, { useState } from 'react';
+import Comments from './Comments';
 
 const CommentSection = ({ comments, postId }) => {
-  const [username, setUsername] = useState("");
-  const [text, setText] = useState("");
+  const [username, setUsername] = useState('');
+  const [text, setText] = useState('');
 
   const refreshPage = () => {
     window.location.reload();
@@ -14,10 +14,10 @@ const CommentSection = ({ comments, postId }) => {
       let res = await fetch(
         `https://dry-hamlet-86450.herokuapp.com/api/posts/${postId}/comments`,
         {
-          method: "POST",
+          method: 'POST',
           headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
           },
           body: JSON.stringify({
             username: username,
@@ -27,8 +27,8 @@ const CommentSection = ({ comments, postId }) => {
       );
       if (res.status === 200) {
         refreshPage();
-        setUsername("");
-        setText("");
+        setUsername('');
+        setText('');
       } else {
         return;
       }
@@ -37,12 +37,13 @@ const CommentSection = ({ comments, postId }) => {
     }
   };
   return (
-    <div className="comment-section-container">
-      <div className="form-container">
+    <div className="bg-white mx-auto w-3/4 p-5 text-xs shadow shadow-slate-400 mb-3">
+      <div className="flex flex-col text-center">
         <form onSubmit={handleSubmitComment}>
-          <div className="form-input">
+          <div className="text-left mx-auto mb-2.5 flex flex-col">
             <label htmlFor="username">Username:</label>
             <input
+              className="border border-black bg-slate-200 px-1"
               id="username"
               name="username"
               type="text"
@@ -50,17 +51,24 @@ const CommentSection = ({ comments, postId }) => {
               onChange={(e) => setUsername(e.target.value)}
             />
           </div>
-          <div className="form-input">
+          <div className="text-left mx-auto mb-2.5 flex flex-col">
             <label htmlFor="text">Comment:</label>
-            <input
+            <textarea
+              className="border border-black bg-slate-200 px-1"
               id="text"
               name="text"
-              type="text"
+              rows="4"
+              cols="50"
               value={text}
               onChange={(e) => setText(e.target.value)}
             />
           </div>
-          <button type="submit">Send Comment</button>
+          <button
+            type="submit"
+            className="bg-blue-500 hover:bg-blue-700 text-white w-full py-1 font-bold rounded text-md"
+          >
+            Send Comment
+          </button>
         </form>
       </div>
       <Comments comments={comments} />

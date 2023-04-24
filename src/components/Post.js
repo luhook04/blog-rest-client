@@ -1,13 +1,14 @@
-import React from "react";
+import React from 'react';
 
 const Post = ({ post }) => {
   return (
-    <div className="post-container">
-      <h3>{post.title}</h3>
-      <h4>
-        <span className="post-date">{post.date}</span> By: {post.authorName}
-      </h4>
-      <p className="post-content">{post.text}</p>
+    <div className="bg-white whitespace-pre-wrap rounded-sm mx-auto w-3/4 p-5 mb-5 shadow shadow-slate-400 text-center mt-4">
+      <h2 className="font-bold text-lg">{post.title}</h2>
+      <h3 className="mb-3 text-sm">
+        <span className="italic font-light">{post.date}</span> By:{' '}
+        {post.authorName}
+      </h3>
+      <p className="post-content p4 text-left text-xs">{post.text}</p>
     </div>
   );
 };

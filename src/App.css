@@ -1,3 +1,4 @@
 html {
-  background-color: white;
+  background-image: linear-gradient(rgb(255, 255, 255), rgb(248, 250, 252));
+  height: 100vh;
 }
