@@ -21,10 +21,10 @@ const Home = () => {
           (post) => post.published === true
         );
         setPosts(publishedPosts);
+        setLoading(false);
       } catch (err) {}
     };
     getPosts();
-    setLoading(false);
   }, []);
 
   return (

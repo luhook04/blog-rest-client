@@ -36,10 +36,10 @@ const PostPage = () => {
         }
         const reqJson = await req.json();
         setComments(reqJson.comments);
+        setPostLoading(false);
       } catch (err) {}
     };
     getComments();
-    setPostLoading(false);
   }, [postId]);
 
   return (
