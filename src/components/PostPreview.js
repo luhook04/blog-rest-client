@@ -24,7 +24,7 @@ const PostPreview = ({ post }) => {
           </Link>
           <div className="flex flex-1 items-center justify-center">
             <CommentIcon />
-            <span>{commentCount}</span>
+            <span className="ml-1">{commentCount}</span>
           </div>
         </div>
       </div>
